@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* New Palette: Dark Green Theme from Screenshot */
+    --background: 160 60% 8%; /* Very Dark Green-Blue */
+    --foreground: 40 50% 95%; /* Creamy Off-White (for main text on dark background) */
+
+    --card: 160 50% 18%; /* Dark Green for card backgrounds */
+    --card-foreground: 40 50% 95%; /* Creamy Off-White text on cards */
+
+    --popover: 160 50% 15%; /* Similar to card, maybe slightly darker */
+    --popover-foreground: 40 50% 95%;
+
+    --primary: 40 50% 95%; /* Creamy Off-White for primary button backgrounds */
+    --primary-foreground: 160 55% 15%; /* Dark Green for text on primary buttons */
+
+    --secondary: 160 45% 25%; /* A slightly lighter/muted green for secondary elements */
+    --secondary-foreground: 40 50% 95%;
+
+    --muted: 160 40% 30%; /* Muted background elements */
+    --muted-foreground: 160 35% 55%; /* Lighter green text for muted contexts (e.g., "Supported formats") */
+
+    --accent: 40 50% 95%; /* Creamy Off-White for icons and other accents */
+    --accent-foreground: 160 55% 15%; /* Dark green for text on accent elements (if accent is bg) */
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 160 40% 22%; /* Subtle border, slightly different from card */
+    --input: 160 50% 14%; /* Darker green for input field background inside card */
+    --ring: 40 60% 85%; /* Lighter cream for focus rings */
+    
+    --chart-1: 160 50% 40%;
+    --chart-2: 160 40% 50%;
+    --chart-3: 160 60% 30%;
+    --chart-4: 160 30% 60%;
+    --chart-5: 160 50% 35%;
+    --radius: 0.75rem; /* Increased border radius */
+
+    /* Sidebar colors - can be same as main theme or distinct if sidebar is heavily used */
+    /* Keeping previous sidebar definitions, adjust if sidebar is used with new theme */
+    --sidebar-background: 160 65% 6%;
+    --sidebar-foreground: 45 35% 88%;
+    --sidebar-primary: 40 50% 95%; 
+    --sidebar-primary-foreground: 160 55% 15%;
+    --sidebar-accent: 40 60% 90%;
+    --sidebar-accent-foreground: 160 55% 15%;
+    --sidebar-border: 160 40% 18%;
+    --sidebar-ring: 40 60% 85%;
+
+    /* Bill Breakdown Colors - Keep distinct from the main theme */
+    --bill-20: 350 70% 60%; 
+    --bill-10: 30 80% 60%;
+    --bill-5: 50 80% 60%;
+    --bill-1: 120 50% 70%;
+    --bill-text: 0 0% 10%;
+  }
+
+  .dark {
+    /* Dark theme will use the same new values as :root for consistency with screenshot */
+    --background: 160 60% 8%;
+    --foreground: 40 50% 95%;
+    --card: 160 50% 18%;
+    --card-foreground: 40 50% 95%;
+    --popover: 160 50% 15%;
+    --popover-foreground: 40 50% 95%;
+    --primary: 40 50% 95%;
+    --primary-foreground: 160 55% 15%;
+    --secondary: 160 45% 25%;
+    --secondary-foreground: 40 50% 95%;
+    --muted: 160 40% 30%;
+    --muted-foreground: 160 35% 55%;
+    --accent: 40 50% 95%;
+    --accent-foreground: 160 55% 15%;
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 160 40% 22%;
+    --input: 160 50% 14%;
+    --ring: 40 60% 85%;
+    /* chart, bill, and sidebar colors are inherited from :root or their specific .dark definitions if any */
+    --chart-1: 160 50% 40%;
+    --chart-2: 160 40% 50%;
+    --chart-3: 160 60% 30%;
+    --chart-4: 160 30% 60%;
+    --chart-5: 160 50% 35%;
+    --sidebar-background: 160 65% 6%;
+    --sidebar-foreground: 45 35% 88%;
+    --sidebar-primary: 40 50% 95%; 
+    --sidebar-primary-foreground: 160 55% 15%;
+    --sidebar-accent: 40 60% 90%;
+    --sidebar-accent-foreground: 160 55% 15%;
+    --sidebar-border: 160 40% 18%;
+    --sidebar-ring: 40 60% 85%;
+    --bill-20: 350 70% 60%;
+    --bill-10: 30 80% 60%;
+    --bill-5: 50 80% 60%;
+    --bill-1: 120 50% 70%;
+    --bill-text: 0 0% 10%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom utility for bill chip text */
+.text-bill {
+  color: hsl(var(--bill-text));
+}
